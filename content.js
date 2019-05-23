@@ -29,6 +29,7 @@ let addClassification = (response, i) => {
     let node = document.createElement("span");
     let textnode = document.createTextNode(mapping[sortResp[j][0]]);
     node.appendChild(textnode);
+    node.title = "Predicted: "+(Math.round(parseFloat(sortResp[j][1]) * 1000) / 10)+"%";
     node.classList.add("ml-tag");
     parentNode.appendChild(node);
   }
