@@ -47,7 +47,6 @@ setTimeout(
         $.ajax({
           contentType: 'application/json',
           crossDomain: true,
-          Access-Control-Allow-Origin': '*',
           data: JSON.stringify({sample: items[i].innerText}),
           success: function(data){
             afterResponse(JSON.parse(data));
