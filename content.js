@@ -5,7 +5,7 @@ setTimeout(
       if(items[i].parentElement.className === 'list-item__body') {
 
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", 'http://0.0.0.0/sample', true);
+        xhr.open("PUT", 'http://13.57.13.174:8081/sample', true);
 
         xhr.onreadystatechange = function() { // Call a function when the state changes.
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
