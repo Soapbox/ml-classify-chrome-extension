@@ -7,7 +7,7 @@
 
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["content.js"],
+    "js": ["jquery-3.4.1.min.js", "content.js"],
     "matches": ["https://soapboxers.soapboxhq.com/*"]
   }],
 
