@@ -1,0 +1,21 @@
+.list-item__body {
+  display: block !important;
+}
+
+.list-item__body a {
+  padding-bottom: 4px !important;
+}
+
+.ml-tags {
+  display: block;
+  padding-bottom: 8px;
+}
+
+.ml-tag {
+  padding: 4px;
+  margin-right: 5px;
+  background-color: #E8F4FE;
+  border-radius: 4px;
+  color: #2291F8;
+  font-size: 12px;
+}

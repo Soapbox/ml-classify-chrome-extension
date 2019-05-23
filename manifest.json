@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "ML for SoapBox",
+  "version": "0.1.0",
+  "description": "",
+
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://soapboxers.soapboxhq.com/*"]
+  }]
+
+}
