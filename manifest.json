@@ -9,6 +9,10 @@
     "css": ["styles.css"],
     "js": ["content.js"],
     "matches": ["https://soapboxers.soapboxhq.com/*"]
-  }]
+  }],
+
+  "permissions": [
+    "http://13.57.13.174:8081/sample/*"
+  ]
 
 }
