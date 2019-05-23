@@ -11,6 +11,10 @@
     "matches": ["https://soapboxers.soapboxhq.com/*"]
   }],
 
+  "icons": {
+    "160": "icon.png"
+  },
+
   "permissions": [
     "http://13.57.13.174:8081/sample/*"
   ]
