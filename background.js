@@ -1,12 +1,7 @@
 'use strict';
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  // sendResponse({farewell: "goodbye1"});
-  console.log('Before Jaskirts special code');
-  console.log(request);
   if (request.api == "acceptItem") {
-    console.log(request);
-
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://13.57.13.174:8081/sample", true);
     xhr.onreadystatechange = function() {
@@ -15,9 +10,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse(resp);
       }
     };
-
     xhr.send(JSON.stringify({sample: request.item}));
-
     return true;
   }
 });
