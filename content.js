@@ -1,5 +1,4 @@
 let addClassification = (response, i) => {
-
   var items = document.getElementsByClassName('link-to');
 
   let sortResp = [];
@@ -46,20 +45,10 @@ setTimeout(
       if(items[i].parentElement.className === 'list-item__body') {
         let index = i;
         let afterResponse = (data) => {addClassification(data, index);};
-        $.ajax({
-          contentType: 'application/json',
-          crossDomain: true,
-          data: JSON.stringify({sample: items[i].innerText}),
-          success: function(data){
-            afterResponse(JSON.parse(data));
-          },
-          error: function(){
-            console.log("Failed");
-          },
-          type: 'POST',
-          url: 'http://13.57.13.174:8081/sample'
-        });
-
+        chrome.runtime.sendMessage(
+            {api: "acceptItem", item:items[i].innerText},
+            response => afterResponse(JSON.parse(response))
+        );
       }
     }
   }, 5000);
