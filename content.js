@@ -1,4 +1,6 @@
 let addClassification = (response, i) => {
+  console.log(response);
+  console.log(i);
 
   var items = document.getElementsByClassName('link-to');
 
@@ -51,7 +53,7 @@ setTimeout(
         chrome.runtime.sendMessage({api: "acceptItem",item:items[i].innerText}, function(response) {
 
           console.log(response);
-          afterResponse(response);
+          afterResponse(response, i);
 
         });
         /*
