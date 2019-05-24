@@ -4,7 +4,10 @@
   "name": "ML for SoapBox",
   "version": "0.1.0",
   "description": "",
-
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["jquery-3.4.1.min.js", "content.js"],

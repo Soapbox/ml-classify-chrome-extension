@@ -39,6 +39,7 @@ let addClassification = (response, i) => {
   items[i].parentElement.appendChild(parentNode);
 };
 
+
 setTimeout(
   function() {
     var items = document.getElementsByClassName('link-to');
@@ -46,6 +47,14 @@ setTimeout(
       if(items[i].parentElement.className === 'list-item__body') {
         let index = i;
         let afterResponse = (data) => {addClassification(data, index);};
+
+        chrome.runtime.sendMessage({api: "acceptItem",item:items[i].innerText}, function(response) {
+
+          console.log(response);
+          afterResponse(response);
+
+        });
+        /*
         $.ajax({
           contentType: 'application/json',
           crossDomain: true,
@@ -59,6 +68,7 @@ setTimeout(
           type: 'POST',
           url: 'http://13.57.13.174:8081/sample'
         });
+        */
 
       }
     }
