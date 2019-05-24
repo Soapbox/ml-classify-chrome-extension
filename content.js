@@ -1,7 +1,4 @@
 let addClassification = (response, i) => {
-  console.log(response);
-  console.log(i);
-
   var items = document.getElementsByClassName('link-to');
 
   let sortResp = [];
@@ -41,7 +38,6 @@ let addClassification = (response, i) => {
   items[i].parentElement.appendChild(parentNode);
 };
 
-
 setTimeout(
   function() {
     var items = document.getElementsByClassName('link-to');
@@ -49,29 +45,10 @@ setTimeout(
       if(items[i].parentElement.className === 'list-item__body') {
         let index = i;
         let afterResponse = (data) => {addClassification(data, index);};
-
-        chrome.runtime.sendMessage({api: "acceptItem",item:items[i].innerText}, function(response) {
-
-          console.log(response);
-          afterResponse(response, i);
-
-        });
-        /*
-        $.ajax({
-          contentType: 'application/json',
-          crossDomain: true,
-          data: JSON.stringify({sample: items[i].innerText}),
-          success: function(data){
-            afterResponse(JSON.parse(data));
-          },
-          error: function(){
-            console.log("Failed");
-          },
-          type: 'POST',
-          url: 'http://13.57.13.174:8081/sample'
-        });
-        */
-
+        chrome.runtime.sendMessage(
+            {api: "acceptItem", item:items[i].innerText},
+            response => afterResponse(JSON.parse(response))
+        );
       }
     }
   }, 5000);
