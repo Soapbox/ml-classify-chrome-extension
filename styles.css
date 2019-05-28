@@ -25,13 +25,17 @@
   margin-top: 20px;
 }
 
+.blog-posts a {
+  color: #000A38;
+}
+
 .blog-post {
   display: inline-block;
-  width: 48%;
+  width: 49%;
   padding: 10px;
   background-color: white;
   border-radius: 16px;
-  margin: 10px 1%;
+  margin: 10px 1% 0px 0px;
   transition: all .2s ease-in-out;
 }
 
@@ -43,19 +47,10 @@
   margin-right: 5px;
   margin-bottom: 3px;
   border-radius: 4px;
-  color: gray();
   font-size: 20px;
   font-weight: bold;
   display: block;
   height: 100px;
-}
-
-.blog-post-date {
-  display: block;
-  margin-bottom: 3px;
-  color: gray();
-  font-size: 12px;
-  font-weight: lighter;
 }
 
 .blog-post-category {

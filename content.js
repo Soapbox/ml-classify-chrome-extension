@@ -1,6 +1,16 @@
 let counter = 0;
 let arrItems = [];
 
+let mapping = {
+  Accountability: 'Accountability',
+  Autonomy: 'Autonomy',
+  Employee_motivation: 'Employee Motivation',
+  Great_communication: 'Great Communication',
+  Growth_and_development: 'Growth and Development',
+  Management_skills: 'Management Skills',
+  Performance: 'Performance'
+};
+
 function createTextNode(text, className) {
   let node = document.createElement('span');
   node.classList.add(className);
@@ -10,12 +20,16 @@ function createTextNode(text, className) {
 }
 
 function createBlogPost(post) {
-  console.log(post);
-  let postNode = document.createElement('div');
-  postNode.classList.add('blog-post');
-  postNode.appendChild(createTextNode(post.title, 'blog-post-title'));
-  postNode.appendChild(createTextNode(post.date, 'blog-post-date'));
-  postNode.appendChild(createTextNode(post.category, 'blog-post-category'));
+  let postNode = document.createElement('a');
+  postNode.setAttribute('href', post.link);
+  postNode.setAttribute('target','_blank',);
+
+  let postDiv = document.createElement('div');
+  postDiv.classList.add('blog-post');
+  postDiv.appendChild(createTextNode(post.title, 'blog-post-title'));
+  postDiv.appendChild(createTextNode(mapping[post.category], 'blog-post-category'));
+
+  postNode.appendChild(postDiv);
   return postNode;
 }
 
@@ -24,7 +38,9 @@ function addBlogs(response) {
   parentNode.classList.add('blog-posts');
 
   for (let i = 0, s = response.length; i < s; i++) {
-    parentNode.appendChild(createBlogPost(response[i]));
+    if (response[i].link !== "") {
+      parentNode.appendChild(createBlogPost(response[i]));
+    }
   }
 
   let containers = document.getElementsByClassName('page-layout__container');
@@ -44,16 +60,6 @@ function addClassification(response, i) {
   sortResp.sort(function(a, b) {
     return b[1] - a[1];
   });
-
-  let mapping = {
-    Accountability: 'Accountability',
-    Autonomy: 'Autonomy',
-    Employee_motivation: 'Employee Motivation',
-    Great_communication: 'Great Communication',
-    Growth_and_development: 'Growth and Development',
-    Management_skills: 'Management Skills',
-    Performance: 'Performance'
-  };
 
   let parentNode = document.createElement('div');
   parentNode.classList.add('ml-tags');
