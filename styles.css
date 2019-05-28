@@ -54,10 +54,14 @@
 }
 
 .blog-post-category {
+  display: inline-block;
   margin-top: 4px;
+  margin-right: 5px;
   padding: 4px;
   background-color: #E8F4FE;
   border-radius: 4px;
   color: #2291F8;
   font-size: 12px;
+  text-transform: capitalize;
+  white-space: pre;
 }

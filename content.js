@@ -27,8 +27,10 @@ function createBlogPost(post) {
   let postDiv = document.createElement('div');
   postDiv.classList.add('blog-post');
   postDiv.appendChild(createTextNode(post.title, 'blog-post-title'));
-  postDiv.appendChild(createTextNode(mapping[post.category], 'blog-post-category'));
-
+  var categoryArray = post.categories.split(',');
+  for (var i = 0; i < categoryArray.length; i++) {
+    postDiv.appendChild(createTextNode(categoryArray[i].replace(/_/g," "), 'blog-post-category'));
+  }
   postNode.appendChild(postDiv);
   return postNode;
 }
