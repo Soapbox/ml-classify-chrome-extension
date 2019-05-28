@@ -46,7 +46,6 @@ function addBlogs(response) {
   }
 
   let containers = document.getElementsByClassName('page-layout__container');
-  console.log(containers);
   let container = containers[0];
   container.appendChild(parentNode);
 }
