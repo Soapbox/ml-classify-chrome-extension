@@ -19,3 +19,49 @@
   color: #2291F8;
   font-size: 12px;
 }
+
+.blog-posts {
+  display: block;
+  margin-top: 20px;
+}
+
+.blog-posts a {
+  color: #000A38;
+}
+
+.blog-post {
+  display: inline-block;
+  width: 49%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 16px;
+  margin: 10px 1% 0px 0px;
+  transition: all .2s ease-in-out;
+}
+
+.blog-post:hover {
+  transform: scale(1.04);
+}
+
+.blog-post-title {
+  margin-right: 5px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  height: 100px;
+}
+
+.blog-post-category {
+  display: inline-block;
+  margin-top: 4px;
+  margin-right: 5px;
+  padding: 4px;
+  background-color: #E8F4FE;
+  border-radius: 4px;
+  color: #2291F8;
+  font-size: 12px;
+  text-transform: capitalize;
+  white-space: pre;
+}
