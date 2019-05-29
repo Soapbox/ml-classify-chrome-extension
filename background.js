@@ -42,6 +42,16 @@ function getCategories() {
   let props = Object.keys(aggregateMap).map(function(key) {
     return { key: key, value: this[key] };
   }, aggregateMap);
+  
+  aggregateMap = {
+    Accountability: 0,
+    Autonomy: 0,
+    Employee_motivation: 0,
+    Great_communication: 0,
+    Growth_and_development: 0,
+    Management_skills: 0,
+    Performance: 0
+  };
 
   props.sort(function(p1, p2) { return p1.value - p2.value; });
 
